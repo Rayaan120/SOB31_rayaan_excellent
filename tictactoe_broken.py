@@ -67,7 +67,7 @@ def add_piece(game, player, row, column):
     row: 0-index row
     column: 0-index column
     """
-    game[row][column+1] = player
+    game[row][column] = player #removed +1 so that user can begin from 1
     return game
 
 def check_space_empty(game, row, column):
@@ -77,7 +77,7 @@ def convert_input_to_coordinate(user_input):
     return user_input - 1
 
 def switch_player(player):
-    if player = 1:
+    if player == 1: # = was missing
         return 2
     else:
         return 1
@@ -98,12 +98,14 @@ if __name__ == '__main__':
     while winner == 0 and moves_exist(game):
         print("Currently player: " + str(player))
         available = False
-        while not available
+        while not available: #fixed the error by adding colon
             row = convert_input_to_coordinate(int(input("Which row? (start with 1) ")))
             column = convert_input_to_coordinate(int(input("Which column? (start with 1) ")))
-            available = check_space_empty(game, row)
+            available = check_space_empty(game, row, column) #fixed the error by adding column
+            if available == False: #to make sure the user do not fill the occupied box
+                print("the box is occupied")
         game = add_piece(game, player, row, column)
         display_game(game)
         player = switch_player(player)
-#        winner = check_winner(game)
+        winner = check_winner(game) #removed the comment to run properly
     display_winner(winner)
