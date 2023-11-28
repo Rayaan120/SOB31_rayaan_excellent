@@ -1,17 +1,19 @@
 import random
 
 def compare_numbers(number, user_guess):
-    cowbull = [0,0]
+    cow = 0
+    bull = 0
     for i in range(len(number)):
-        if number[i] == user_guess[i]:
-            cowbull[1]+= 1
+        if user_guess[i] == number[i]:
+            bull += 1
         elif user_guess[i] in number:
-            cowbull[0]+= 1
-    return cowbull
+            cow += 1
+    return cow,bull
 if __name__ == "__main__":
     playing = True #gotta play the game
 number = str(random.randint(0,9999)) #random 4 digit number
 guesses = 0
+print(number)
 
 
 print("Let's play a game of Cowbull!") #explanation
