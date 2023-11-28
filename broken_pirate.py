@@ -1,5 +1,5 @@
-greeting = input("Hello, possible pirate! What's the password?)
-if greeting in ["Arrr!"):
+greeting = input("Hello, possible pirate! What's the password?") #added string
+if greeting in ("Arrr!"): # added bracket
 	print("Go away, pirate.")
-elif
-print("Greetings, hater of pirates!")
+else: #added colon and changed elif to else
+	print("Greetings, hater of pirates!")
