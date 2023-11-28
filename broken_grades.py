@@ -44,12 +44,12 @@ else: #changed to else
     letter_grade = "F"
 
 for grade in grades:
-    print("Exam: " + str(grade))
+    print("Exam: " + str(grades)) #added str
 
     print("Average: " + str(avg))
 
     print("Grade: " + letter_grade)
-
+    break
 if letter_grade == "F": #added _ and switched is to ==
     print ("Student is failing.") #added brackets
 else:
